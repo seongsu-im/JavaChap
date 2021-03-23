@@ -16,7 +16,7 @@ public class LabelEx {
 						//break Loops;
 						//break;
 						//continue Loops;
-						continue;
+						//continue;
 					System.out.println(i+"*"+j+"="+i*j);
 				}
 
