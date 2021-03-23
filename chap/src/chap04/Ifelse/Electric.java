@@ -10,7 +10,7 @@ public class Electric {
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.print("전기 사용량을 입력하세요 -->> ");
-		double kmh = scan.nextDouble();
+		double kmh = scan.nextDouble(); 
 		
 		if(kmh<=200) {
 			
