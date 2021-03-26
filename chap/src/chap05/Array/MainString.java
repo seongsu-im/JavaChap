@@ -5,6 +5,12 @@ public class MainString {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		if("http://dev.hamletshu.com".equals(System.getenv("API_URL"))) {
+			//개발 서버일 경우 돌아가는 로직
+		}else {
+			//운영 서버일 경우 돌아가는 로직
+		}
+		
 		if(args.length ==2) {
 			
 			int i = Integer.parseInt(args[1]);
