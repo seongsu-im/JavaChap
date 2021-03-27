@@ -44,7 +44,7 @@ package JDBC;
 				System.out.print(" "+rs.getInt(4)+"\n");
 			}
 			
-			rs.close();
+			rs.close(); 
 	        
 	        pstmt.close();
 			conn.close();
