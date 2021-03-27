@@ -26,21 +26,21 @@ package JDBC;
 			Statement stmt = con.createStatement();
 					
 			// int executeQuery는 INSERT, UPDATE, DELETE 같은 SQL문을 실행하고 SQL문 실행으로 영향을 받은 행의 개수나 0을 반환 
-			int rs = stmt.executeUpdate("delete from book where bookid=16"); // 데이터 삭제 --> 인자의 String내용을 포맷에 맞게 변경할 것
+			int ec = stmt.executeUpdate("delete from book where bookid=16"); // 데이터 삭제 --> 인자의 String내용을 포맷에 맞게 변경할 것
 			
 			//int num = st.executeUpdate(sql) -> 몇개의 값이 수정되었는지 정수형 반환
 			//System.out.println(rs);
 			
-			ResultSet as = stmt.executeQuery("select* from book order by bookid");
-			while(as.next()) {
+			ResultSet rs = stmt.executeQuery("select* from book order by bookid");
+			while(rs.next()) {
 				
-				System.out.print(as.getInt(1));
-				System.out.print(" "+as.getString(2));
-				System.out.print(" "+as.getString(3));
-				System.out.print(" "+as.getInt(4)+"\n");
+				System.out.print(rs.getInt(1));
+				System.out.print(" "+rs.getString(2));
+				System.out.print(" "+rs.getString(3));
+				System.out.print(" "+rs.getInt(4)+"\n");
 			}
 			
-			as.close();
+			rs.close();
 			stmt.close();
 			con.close();
 		}

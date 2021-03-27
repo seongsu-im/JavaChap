@@ -16,10 +16,7 @@ public class Create_table_Ex {
          Connection conn = DriverManager.getConnection
                ("jdbc:oracle:thin:@localhost:1521:xe","scott","tiger");
 
-         String sql = "CREATE TABLE EMP1(\r\n" + 
-               "EMPNO_L NUMBER,\r\n" + 
-               "ENAME_L VARCHAR2(30),\r\n" + 
-               "SAL_L NUMBER)";
+         String sql = "CREATE TABLE EMP1(\r\n EMPNO_L NUMBER,\r\n ENAME_L VARCHAR2(30),\r\n SAL_L NUMBER)";
          PreparedStatement pstmt = conn.prepareStatement(sql);
          ResultSet rs = null;
 

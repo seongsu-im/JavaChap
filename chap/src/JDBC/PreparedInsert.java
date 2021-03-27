@@ -27,7 +27,7 @@ package JDBC;
 			// 실행이 빠르고 가독성이 좋으며 코드의 재사용 가능
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setInt(1, 57);
+			pstmt.setInt(1, 59);
 			pstmt.setString(2, "행복한 왕자");
 			pstmt.setString(3, "와일드출판사");
 			pstmt.setInt(4, 12000);
@@ -35,16 +35,16 @@ package JDBC;
 			pstmt=conn.prepareStatement("select* from book where bookid=?");
 			pstmt.setInt(1,33);
 			
-			ResultSet as = pstmt.executeQuery("select* from book order by bookid");
-			while(as.next()) {
+			ResultSet rs = pstmt.executeQuery("select* from book order by bookid");
+			while(rs.next()) {
 				
-				System.out.print(as.getInt(1));
-				System.out.print(" "+as.getString(2));
-				System.out.print(" "+as.getString(3));
-				System.out.print(" "+as.getInt(4)+"\n");
+				System.out.print(rs.getInt(1));
+				System.out.print(" "+rs.getString(2));
+				System.out.print(" "+rs.getString(3));
+				System.out.print(" "+rs.getInt(4)+"\n");
 			}
 			
-			as.close();
+			rs.close();
 	        
 	        pstmt.close();
 			conn.close();
