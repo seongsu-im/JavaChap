@@ -35,6 +35,7 @@ package JDBC;
 			pstmt=conn.prepareStatement("select* from book where bookid=?");
 			pstmt.setInt(1,33);
 			
+			
 			ResultSet rs = pstmt.executeQuery("select* from book order by bookid");
 			while(rs.next()) {
 				
@@ -44,7 +45,7 @@ package JDBC;
 				System.out.print(" "+rs.getInt(4)+"\n");
 			}
 			
-			rs.close();
+			rs.close(); 
 	        
 	        pstmt.close();
 			conn.close();
