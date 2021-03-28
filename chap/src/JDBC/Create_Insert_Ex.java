@@ -31,7 +31,7 @@ public class Create_Insert_Ex {
             pstmt.setInt(1, empno_l);
             pstmt.setString(2, ename_l);
             pstmt.setInt(3, sal_l);
- 
+   
             ResultSet rs = pstmt.executeQuery();   
             
             System.out.println("입력을 계속하시겠습니까? (y/n) ");
