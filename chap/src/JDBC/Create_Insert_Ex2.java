@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
-public class Create_Insert_Ex {
+public class Create_Insert_Ex2 {
 	
    public static void main(String[] args) {
       Scanner scan = new Scanner(System.in);
@@ -16,8 +16,8 @@ public class Create_Insert_Ex {
          Connection conn = DriverManager.getConnection
                ("jdbc:oracle:thin:@localhost:1521:xe","scott","tiger");
 
-                        
-
+         conn.setAutoCommit(false);
+         
          boolean y = true; 
          while (y) {
             System.out.println("사번, 이름, 월급 순서로 입력하세요");
@@ -33,6 +33,22 @@ public class Create_Insert_Ex {
             pstmt.setInt(3, sal_l);
 
             ResultSet rs = pstmt.executeQuery();   
+            
+            System.out.println("최종적으로 DB에 저장하시겠습니까? (y/n)");
+            String result = scan.next();
+            if(result.equals("y")) {
+            	
+            	conn.commit();
+				System.out.println("정보가 추가되었습니다.");
+            	            	
+            }
+            
+            else if(result.equals("n")) {
+            	
+            	conn.rollback();
+            	System.out.println("정보가 추가되지 않았습니다.");
+            	
+            }
             
             System.out.println("입력을 계속하시겠습니까? (y/n) ");
             if(scan.next().equals("n")) {

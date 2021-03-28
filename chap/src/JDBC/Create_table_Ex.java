@@ -18,9 +18,8 @@ public class Create_table_Ex {
 
          String sql = "CREATE TABLE EMP1(\r\n EMPNO_L NUMBER,\r\n ENAME_L VARCHAR2(30),\r\n SAL_L NUMBER)";
          PreparedStatement pstmt = conn.prepareStatement(sql);
-         ResultSet rs = null;
+         ResultSet rs = pstmt.executeQuery();   
 
-         pstmt.executeQuery();   
       }catch (SQLException e) {
          e.printStackTrace();
          System.out.println("연결 오류");
