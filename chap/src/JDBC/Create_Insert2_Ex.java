@@ -30,7 +30,7 @@ public class Create_Insert2_Ex {
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, empno_l);
             pstmt.setString(2, ename_l);
-            pstmt.setInt(3, sal_l); 
+            pstmt.setInt(3, sal_l);
 
             ResultSet rs = pstmt.executeQuery();   
             
