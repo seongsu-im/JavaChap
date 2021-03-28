@@ -33,7 +33,7 @@ public class Create_Insert_Exx {
             pstmt.setInt(3, sal_l); 
 
             ResultSet rs = pstmt.executeQuery();   
-            
+             
             System.out.println("최종적으로 DB에 저장하시겠습니까? (y/n)");
             String result = scan.next();
             if(result.equals("y")) {
