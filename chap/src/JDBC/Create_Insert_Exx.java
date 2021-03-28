@@ -40,7 +40,7 @@ public class Create_Insert_Exx {
             	
             	conn.commit();
 				System.out.println("정보가 추가되었습니다.");
-            	            	
+             	            	
             }
             
             else if(result.equals("n")) {

@@ -25,4 +25,4 @@ public class Create_table_Ex {
          System.out.println("연결 오류");
       }
    }
-}
+} 
