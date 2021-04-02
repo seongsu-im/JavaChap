@@ -24,7 +24,7 @@ public class MembersDAO {
 			int userId = 0;
 			String userPwd = null;
 			Members mem = null; 
-			List<Members> al = null;
+			List<Members> al = null; //회원들을 저장할 수 리스트(ArrayList, LinkedList)를 참조하는 변수
 			//DB 연결
 			conn = getConnectivity(url, dbUserId, dbPwd);
 			BREAK:
@@ -57,7 +57,7 @@ public class MembersDAO {
 						}
 						break;
 					case 4: //삭제
-						System.out.println("삭제할 회원의 이름과 비밀번호를 입력하시오>> ");
+						System.out.println("삭제할 회원의 아이디와 비밀번호를 입력하시오>> ");
 						userId = scan.nextInt(); userPwd=scan.next();
 						if(isMember(conn, pstmt, rs, userId, userPwd)) {
 							System.out.println("비밀번호, 이름, 이메일, 전화번호 순으로 입력하시오>> ");
@@ -92,6 +92,8 @@ public class MembersDAO {
 		public static boolean isMember(Connection conn, PreparedStatement pstmt, ResultSet rs,
 				int userId, String userPwd) {
 			String sql = "select * from members where userid = ? and userpwd = ?";
+			
+			//회원이면 true 비회원이면 false 반환
 			boolean result = true;
 			try {
 
@@ -108,6 +110,8 @@ public class MembersDAO {
 		}
 
 		public static void showAll(List<Members> al) {
+			//Members 객체 리스트의 정보들을 모두출력
+			
 			List<Members> members = al;
 			
 			for(Members m : members) {
