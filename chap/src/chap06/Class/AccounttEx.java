@@ -11,8 +11,7 @@ public class AccounttEx {
 		acc.accountNo=11111;
 		acc.name="코난";
 		acc.balance=10000;
-		
-		
+	
 		System.out.println("------------------------------------------");
 		acc.display();
 		System.out.println("------------------------------------------");
